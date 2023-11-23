@@ -27,6 +27,16 @@ Vielle_liste = f.readlines()  # Lit les lignes du fichier et les stocke dans la 
 
 Nouvelle_liste = cleanlist(Vielle_liste)  # Appelle la fonction 'cleanlist' pour nettoyer la liste de valeurs.
 
+def ElfList(Nouvelle_liste):
+    """
+    Renvoie une liste avec tout ce que chaque elfe.
+    De type : L'efle 1 a fait un repas de 123 calories.
+    """
+    ElfList = []
+    for i in range(len(Nouvelle_liste)):
+        ElfList.append("L'elfe " + str(i+1) + " a fait un repas de " + str(Nouvelle_liste[i]) + " calories.")
+    return ElfList
+
 
 print(Nouvelle_liste)
 #Affiche la valeur du repas le plus calorique en utilisant la fonction 'max'.
@@ -34,3 +44,7 @@ print("L'elf qui a fait le repas le plus calorique a fait un repas de", max(Nouv
 
 # Affiche la somme des trois plus gros repas en utilisant la fonction 'Top3'.
 print("Le total des trois plus gros repas est de", Top3(Nouvelle_liste), "calories")
+
+#Affiche la liste des repas de chaque elfe.
+for i in range(len(ElfList(Nouvelle_liste))):
+    print(ElfList(Nouvelle_liste)[i])
